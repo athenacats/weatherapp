@@ -2,11 +2,13 @@
   display: flex;
   height: 5rem;
   background-color: var(--primary);
+  width: 100%;
   .content {
     padding: 1rem;
     height: 100%;
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
     color: var(--text);
     h1:hover {
