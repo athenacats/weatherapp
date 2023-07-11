@@ -18,8 +18,9 @@ router.get(
   asyncHandler(async (req, res) => {
     try {
       const { city } = req.query;
-      const API_KEY = process.env.API_KEY;
-      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
+      console.log(city);
+      const API = process.env.API_KEY!;
+      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${API}&q=${city}&aqi=no`;
 
       const response = await axios.get(apiUrl);
       const weatherData = response.data;
