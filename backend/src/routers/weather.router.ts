@@ -5,7 +5,7 @@ import axios from "axios";
 const router = Router();
 
 router.get(
-  "/",
+  "/weather",
   asyncHandler(async (req, res) => {
     try {
       const { city } = req.query;
