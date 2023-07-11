@@ -1,0 +1,32 @@
+div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  input {
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    height: 2rem;
+    padding: 0.5rem.7rem;
+    font-family: var(--fonts);
+    width: 70%;
+    color: var(--text);
+  }
+  button {
+    background-color: var(--accent1);
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    width: 30%;
+    height: 2rem;
+    font-family: var(--fonts);
+    text-align: center;
+    color: var(--text);
+    align-content: center;
+  }
+  button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
