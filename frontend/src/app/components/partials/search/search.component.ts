@@ -16,7 +16,7 @@ export class SearchComponent {
   }
 
   search(term: string): void {
-    this.searchTerm = term;
+    this.searchTerm = term; // this line enables the search term be used in backend
     this.weatherService.getWeather(this.searchTerm).subscribe(
       (weatherData) => {
         console.log(weatherData); // Display the weather data in the browser console for now
