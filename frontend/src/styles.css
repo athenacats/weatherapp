@@ -16,7 +16,7 @@ body {
 
 body {
   font-family: "Oswald", Arial, Verdana, Optima, sans-serif;
-  background-color: var(--tertiary);
+  background-color: var(--accent2);
 }
 
 :root {
@@ -25,4 +25,5 @@ body {
   --tertiary: #88bb92;
   --accent1: #94ddbc;
   --accent2: #a0ecd0;
+  --text: #080e01;
 }/*# sourceMappingURL=styles.css.map */
