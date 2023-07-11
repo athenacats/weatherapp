@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-search',
@@ -9,12 +11,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchComponent {
   searchTerm = '';
 
-  constructor(activatedRoute: ActivatedRoute, private router: Router) {
-    activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm']) this.searchTerm = params['searchTerm'];
-    });
+  constructor(private weatherService: WeatherService) {
+    console.log(this.searchTerm);
   }
   search(term: string): void {
-    if (term) this.router.navigateByUrl('/search/' + term);
+    this.searchTerm;
+    this.weatherService.getWeather(this.searchTerm).subscribe(
+      (weatherData) => {
+        console.log(weatherData); // Display the weather data in the browser console for now
+      },
+      (error) => {
+        console.error(error); // Handle the error appropriately
+      }
+    );
   }
 }
