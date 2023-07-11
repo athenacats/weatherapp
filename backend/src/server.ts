@@ -1,6 +1,7 @@
 import asyncHandler from "express-async-handler";
 import express from "express";
 import cors from "cors";
+import weatherRouter from "./routers/weather.router";
 
 const app = express();
 app.use(
@@ -10,7 +11,7 @@ app.use(
   })
 );
 
-app.get("/api/home", asyncHandler(async(req, res)));
+app.use("/api", weatherRouter);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
