@@ -4,6 +4,15 @@ import axios from "axios";
 
 const router = Router();
 
+router.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Max-Age", "1800");
+  res.header("Access-Control-Allow-Methods", "*");
+  next();
+});
+
 router.get(
   "/weather",
   asyncHandler(async (req, res) => {
