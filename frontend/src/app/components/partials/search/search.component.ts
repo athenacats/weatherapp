@@ -14,8 +14,9 @@ export class SearchComponent {
   constructor(private weatherService: WeatherService) {
     console.log(this.searchTerm);
   }
+
   search(term: string): void {
-    this.searchTerm;
+    this.searchTerm = term;
     this.weatherService.getWeather(this.searchTerm).subscribe(
       (weatherData) => {
         console.log(weatherData); // Display the weather data in the browser console for now
