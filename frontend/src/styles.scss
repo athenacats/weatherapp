@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200%3B300%3B400%3B500%3B600%3B700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+$fonts: "Oswald", Arial, Verdana, Optima, sans-serif;
+$primary: #714955;
+$secondary: #7b886b;
+$tertiary: #88bb92;
+$accent1: #94ddbc;
+$accent2: #a0ecd0;
+
+body {
+  font-family: $fonts;
+  background-color: var(--tertiary);
+}
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --tertiary: #{$tertiary};
+  --accent1: #{$accent1};
+  --accent2: #{$accent2};
+}

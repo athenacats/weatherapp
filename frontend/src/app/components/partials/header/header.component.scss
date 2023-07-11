@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  height: 5rem;
+  background-color: var(--primary);
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

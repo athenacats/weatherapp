@@ -1,12 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200%3B300%3B400%3B500%3B600%3B700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
 body {
   font-family: "Oswald", Arial, Verdana, Optima, sans-serif;
+  background-color: var(--tertiary);
 }
 
 :root {
