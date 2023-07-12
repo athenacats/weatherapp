@@ -725,7 +725,58 @@
     <h2>Daily Forecast</h2>
     <div class="forecast">
       <div class="day1">
-        <h4>{{ weatherData.forecast.forecastday[0].date | date : "EEEE" }}</h4>
+        <h3>{{ weatherData.forecast.forecastday[0].date | date : "EEEE" }}</h3>
+        <img
+          src="{{ weatherData.forecast.forecastday[0].day.condition.icon }}"
+        />
+        <div>
+          <h4>
+            H: {{ weatherData.forecast.forecastday[0].day.maxtemp_c }}°C ({{
+              weatherData.forecast.forecastday[0].day.maxtemp_f
+            }}°F)
+          </h4>
+          <h4>
+            L: {{ weatherData.forecast.forecastday[0].day.mintemp_c }}°C ({{
+              weatherData.forecast.forecastday[0].day.mintemp_f
+            }}°F)
+          </h4>
+        </div>
+      </div>
+      <div class="day1">
+        <h3>{{ weatherData.forecast.forecastday[1].date | date : "EEEE" }}</h3>
+        <img
+          src="{{ weatherData.forecast.forecastday[1].day.condition.icon }}"
+        />
+        <div>
+          <h4>
+            H: {{ weatherData.forecast.forecastday[1].day.maxtemp_c }}°C ({{
+              weatherData.forecast.forecastday[1].day.maxtemp_f
+            }}°F)
+          </h4>
+          <h4>
+            L: {{ weatherData.forecast.forecastday[1].day.mintemp_c }}°C ({{
+              weatherData.forecast.forecastday[1].day.mintemp_f
+            }}°F)
+          </h4>
+        </div>
+      </div>
+      <div class="day1">
+        <h3>{{ weatherData.forecast.forecastday[2].date | date : "EEEE" }}</h3>
+        <img
+          src="{{ weatherData.forecast.forecastday[2].day.condition.icon }}"
+        />
+        <div>
+          <h4>
+            H: {{ weatherData.forecast.forecastday[2].day.maxtemp_c }}°C ({{
+              weatherData.forecast.forecastday[2].day.maxtemp_f
+            }}°F)
+          </h4>
+          <h4>
+            L: {{ weatherData.forecast.forecastday[2].day.mintemp_c }}°C ({{
+              weatherData.forecast.forecastday[2].day.mintemp_f
+            }}°F)
+          </h4>
+        </div>
       </div>
     </div>
   </div>
