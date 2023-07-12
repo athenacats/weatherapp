@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SEARCH_RESULT } from '../shared/constants/urls';
+import { FORECAST_RESULT, SEARCH_RESULT } from '../shared/constants/urls';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,6 @@ export class WeatherService {
   }
 
   getForecast(searchTerm: string) {
-    return this.http.get<any>(SEARCH_RESULT + '?city=' + searchTerm);
+    return this.http.get<any>(FORECAST_RESULT + '?city=' + searchTerm);
   }
 }
