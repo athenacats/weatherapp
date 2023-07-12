@@ -33,4 +33,24 @@ router.get(
   })
 );
 
+router.get(
+  "/forecast",
+  asyncHandler(async (req, res) => {
+    try {
+      const { city } = req.query;
+      console.log(city);
+      const API = process.env.API_KEY!;
+      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${API}&q=${city}&days=7&aqi=no&alerts=no`;
+
+      const response = await axios.get(apiUrl);
+      const weatherData = response.data;
+
+      res.json(weatherData);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "An error has occured" });
+    }
+  })
+);
+
 export default router;
