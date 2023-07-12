@@ -98,6 +98,17 @@
   gap: 1rem;
   width: 100%;
 }
+.container .section3 button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--tertiary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--fonts);
+  background-color: var(--accents2);
+  width: 12rem;
+}
 .container .section3 .forecast {
   width: 100%;
   display: flex;
@@ -111,10 +122,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.container .section3 .forecast h3 {
-  font-size: 1.3rem;
-  font-weight: 400;
+  background-color: var(--tertiary);
+  padding: 1rem;
+  border-radius: 2rem;
 }
 .container .section3 .forecast h4 {
   font-weight: 400;
