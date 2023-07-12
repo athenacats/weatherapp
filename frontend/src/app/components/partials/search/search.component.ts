@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { Observable, catchError, tap, throwError } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { WeatherService } from 'src/app/services/weather.service';
 })
 export class SearchComponent {
   searchTerm = '';
+  searchWeatherData$!: Observable<any>;
+  errorMessage!: string;
 
   constructor(private weatherService: WeatherService) {
     console.log(this.searchTerm);
@@ -17,13 +19,17 @@ export class SearchComponent {
 
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
-    this.weatherService.getWeather(this.searchTerm).subscribe(
-      (weatherData) => {
-        console.log(weatherData); // Display the weather data in the browser console for now
-      },
-      (error) => {
-        console.error(error); // Handle the error appropriately
-      }
-    );
+    this.searchWeatherData$ = this.weatherService
+      .getForecast(this.searchTerm)
+      .pipe(
+        tap((weatherData) => {
+          console.log(weatherData); // Display the weather data in the browser console for now
+        }),
+        catchError((error) => {
+          this.errorMessage = 'An error occurred while fetching weather data.';
+          console.error(error);
+          return throwError(() => new Error(error));
+        })
+      );
   }
 }

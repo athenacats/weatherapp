@@ -10,6 +10,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class HomeComponent implements OnInit {
   searchTerm = '';
   weatherData$!: Observable<any>;
+  searchWeatherData$!: Observable<any>;
   errorMessage!: string;
   showDailyForecast = false;
   constructor(private weatherService: WeatherService) {}
@@ -29,17 +30,18 @@ export class HomeComponent implements OnInit {
   }
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
-    this.weatherData$ = this.weatherService.getWeather(this.searchTerm).pipe(
-      tap((weatherData) => {
-        console.log(weatherData); // Display the weather data in the browser console for now
-        console.log(weatherData.current.condition.text);
-      }),
-      catchError((error) => {
-        this.errorMessage = 'An error occurred while fetching weather data.';
-        console.error(error);
-        return throwError(() => new Error(error));
-      })
-    );
+    this.searchWeatherData$ = this.weatherService
+      .getForecast(this.searchTerm)
+      .pipe(
+        tap((weatherData) => {
+          console.log(weatherData); // Display the weather data in the browser console for now
+        }),
+        catchError((error) => {
+          this.errorMessage = 'An error occurred while fetching weather data.';
+          console.error(error);
+          return throwError(() => new Error(error));
+        })
+      );
   }
 
   hourlyForecast() {

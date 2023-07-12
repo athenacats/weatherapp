@@ -153,7 +153,7 @@
       display: none;
       overflow-x: auto;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: flex-start; // need this to ensure you can see first div
       gap: 1rem;
       padding-bottom: 0.5rem;
 
