@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
       catchError((error) => {
         this.errorMessage = 'An error occurred while fetching weather data.';
         console.error(error);
-        return throwError(error);
+        return throwError(() => new Error(error));
       })
     );
     this.weatherData$.subscribe(
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       catchError((error) => {
         this.errorMessage = 'An error occurred while fetching weather data.';
         console.error(error);
-        return throwError(error);
+        return throwError(() => new Error(error));
       })
     );
     this.weatherData$.subscribe(
