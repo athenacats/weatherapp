@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.weatherData$ = this.weatherService.getWeather('nairobi').pipe(
+    this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
       tap((weatherData) => {
         console.log(weatherData); // Display the weather data in the browser console for now
         console.log(weatherData.current.condition.text);
