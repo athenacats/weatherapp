@@ -65,9 +65,12 @@
         </g>
       </svg>
       <h4>
-        Feels Like: {{ weatherData.current.feelslike_c }}°C ({{
-          weatherData.current.feelslike_f
-        }}°F)
+        Feels Like:
+        <strong
+          >{{ weatherData.current.feelslike_c }}°C ({{
+            weatherData.current.feelslike_f
+          }}°F)</strong
+        >
       </h4>
     </div>
     <div class="uvindex">
@@ -188,7 +191,9 @@
           />
         </g>
       </svg>
-      <h4>UV Index: {{ weatherData.current.uv }}</h4>
+      <h4>
+        UV Index: <strong>{{ weatherData.current.uv }}</strong>
+      </h4>
     </div>
     <div class="precipitation">
       <svg
@@ -274,9 +279,12 @@
         </g>
       </svg>
       <h4>
-        Precipitation: {{ weatherData.current.precip_mm }}mm ({{
-          weatherData.current.precip_in
-        }})in
+        Precipitation:
+        <strong
+          >{{ weatherData.current.precip_mm }}mm ({{
+            weatherData.current.precip_in
+          }})in
+        </strong>
       </h4>
     </div>
     <div class="wind">
@@ -346,9 +354,12 @@
         </g>
       </svg>
       <h4>
-        Wind Speed: {{ weatherData.current.wind_kph }}km/h ({{
-          weatherData.current.wind_mph
-        }}m/h)
+        Wind Speed:
+        <strong
+          >{{ weatherData.current.wind_kph }}km/h ({{
+            weatherData.current.wind_mph
+          }}m/h)
+        </strong>
       </h4>
     </div>
     <div class="humidity">
@@ -390,7 +401,9 @@
           />
         </g>
       </svg>
-      <h4>Humidity: {{ weatherData.current.humidity }}%</h4>
+      <h4>
+        Humidity: <strong>{{ weatherData.current.humidity }}%</strong>
+      </h4>
     </div>
     <div class="pressure">
       <svg
@@ -431,7 +444,9 @@
           fill="#0F0F0F"
         />
       </svg>
-      <h4>Pressure: {{ weatherData.current.pressure_mb }}mb</h4>
+      <h4>
+        Pressure: <strong>{{ weatherData.current.pressure_mb }}mb</strong>
+      </h4>
     </div>
     <div class="visibility">
       <svg
@@ -496,9 +511,12 @@
         </g>
       </svg>
       <h4>
-        Visibility: {{ weatherData.current.vis_km }}km ({{
-          weatherData.current.vis_miles
-        }}mi)
+        Visibility:
+        <strong
+          >{{ weatherData.current.vis_km }}km ({{
+            weatherData.current.vis_miles
+          }}mi)
+        </strong>
       </h4>
     </div>
   </div>
