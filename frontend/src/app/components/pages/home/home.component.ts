@@ -40,4 +40,54 @@ export class HomeComponent implements OnInit {
       })
     );
   }
+
+  hourlyForecast() {
+    const elements = document.getElementsByClassName('dailyForecast');
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i] as HTMLElement;
+      element.style.display = 'flex';
+    }
+    const elements1 = document.getElementsByClassName('forecast');
+    for (let i = 0; i < elements1.length; i++) {
+      const element = elements1[i] as HTMLElement;
+      element.style.display = 'none';
+    }
+    const title1 = document.getElementsByClassName('daily');
+    for (let i = 0; i < title1.length; i++) {
+      const element = title1[i] as HTMLElement;
+      element.style.fontSize = '1.2rem';
+      element.style.fontWeight = '400';
+    }
+    const title2 = document.getElementsByClassName('hourly');
+    for (let i = 0; i < title1.length; i++) {
+      const element = title2[i] as HTMLElement;
+      element.style.fontSize = '1.5rem';
+      element.style.fontWeight = '500';
+    }
+  }
+
+  dailyForecast() {
+    const elements = document.getElementsByClassName('dailyForecast');
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i] as HTMLElement;
+      element.style.display = 'none';
+    }
+    const elements1 = document.getElementsByClassName('forecast');
+    for (let i = 0; i < elements1.length; i++) {
+      const element = elements1[i] as HTMLElement;
+      element.style.display = 'flex';
+    }
+    const title1 = document.getElementsByClassName('daily');
+    for (let i = 0; i < title1.length; i++) {
+      const element = title1[i] as HTMLElement;
+      element.style.fontSize = '1.5rem';
+      element.style.fontWeight = '500';
+    }
+    const title2 = document.getElementsByClassName('hourly');
+    for (let i = 0; i < title1.length; i++) {
+      const element = title2[i] as HTMLElement;
+      element.style.fontSize = '1.2rem';
+      element.style.fontWeight = '400';
+    }
+  }
 }
