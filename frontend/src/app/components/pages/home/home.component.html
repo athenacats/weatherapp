@@ -722,76 +722,46 @@
     </div>
   </div>
   <div class="section3">
-    <button>Daily Forecast</button>
+    <div class="buttons">
+      <button class="daily">Daily Forecast</button>
+      <button class="hourly">Hourly Forecast</button>
+    </div>
     <div class="forecast">
-      <div class="day1">
-        <h3>{{ weatherData.forecast.forecastday[0].date | date : "EEEE" }}</h3>
-        <img
-          src="{{ weatherData.forecast.forecastday[0].day.condition.icon }}"
-        />
+      <div class="day1" *ngFor="let day of weatherData.forecast.forecastday">
+        <h3>{{ day.date | date : "EEEE" }}</h3>
+        <img src="{{ day.day.condition.icon }}" />
         <div>
           <h4>
             H:
-            <strong
-              >{{
-                weatherData.forecast.forecastday[0].day.maxtemp_c
-              }}°C </strong
-            >({{ weatherData.forecast.forecastday[0].day.maxtemp_f }}°F)
+            <strong>{{ day.day.maxtemp_c }}°C </strong>({{
+              day.day.maxtemp_f
+            }}°F)
           </h4>
           <h4 class="low">
             L:
-            <strong
-              >{{ weatherData.forecast.forecastday[0].day.mintemp_c }}°C
-            </strong>
-            ({{ weatherData.forecast.forecastday[0].day.mintemp_f }}°F)
+            <strong>{{ day.day.mintemp_c }}°C </strong>
+            ({{ day.day.mintemp_f }}°F)
           </h4>
         </div>
       </div>
-      <div class="day1">
-        <h3>{{ weatherData.forecast.forecastday[1].date | date : "EEEE" }}</h3>
-        <img
-          src="{{ weatherData.forecast.forecastday[1].day.condition.icon }}"
-        />
+    </div>
+    <div class="dailyForecast">
+      <div
+        class="day1"
+        *ngFor="let hour of weatherData.forecast.forecastday[0].hour"
+      >
+        <h3>
+          {{ hour.time | date : "h a" }}
+        </h3>
+        <img src="{{ hour.condition.icon }}" />
         <div>
           <h4>
-            H:
-            <strong
-              >{{
-                weatherData.forecast.forecastday[1].day.maxtemp_c
-              }}°C </strong
-            >({{ weatherData.forecast.forecastday[1].day.maxtemp_f }}°F)
+            Temp:
+            <strong>{{ hour.temp_c }}°C </strong>({{ hour.temp_f }}°F)
           </h4>
-          <h4 class="low">
-            L:
-            <strong
-              >{{
-                weatherData.forecast.forecastday[1].day.mintemp_c
-              }}°C </strong
-            >({{ weatherData.forecast.forecastday[1].day.mintemp_f }}°F)
-          </h4>
-        </div>
-      </div>
-      <div class="day1">
-        <h3>{{ weatherData.forecast.forecastday[2].date | date : "EEEE" }}</h3>
-        <img
-          src="{{ weatherData.forecast.forecastday[2].day.condition.icon }}"
-        />
-        <div>
           <h4>
-            H:
-            <strong
-              >{{
-                weatherData.forecast.forecastday[2].day.maxtemp_c
-              }}°C </strong
-            >({{ weatherData.forecast.forecastday[2].day.maxtemp_f }}°F)
-          </h4>
-          <h4 class="low">
-            L:
-            <strong
-              >{{
-                weatherData.forecast.forecastday[2].day.mintemp_c
-              }}°C </strong
-            >({{ weatherData.forecast.forecastday[2].day.mintemp_f }}°F)
+            Rain:
+            <strong>{{ hour.chance_of_rain }}% </strong>
           </h4>
         </div>
       </div>
