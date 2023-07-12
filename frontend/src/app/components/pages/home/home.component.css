@@ -98,7 +98,11 @@
   gap: 1rem;
   width: 100%;
 }
-.container .section3 button {
+.container .section3 .buttons {
+  display: flex;
+  gap: 1rem;
+}
+.container .section3 .daily {
   outline: none;
   border: none;
   cursor: pointer;
@@ -107,7 +111,18 @@
   font-weight: 500;
   font-family: var(--fonts);
   background-color: var(--accents2);
-  width: 12rem;
+  width: 10rem;
+}
+.container .section3 .hourly {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--tertiary);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: var(--fonts);
+  background-color: var(--accents2);
+  width: 10rem;
 }
 .container .section3 .forecast {
   width: 100%;
@@ -125,6 +140,7 @@
   background-color: var(--tertiary);
   padding: 1rem;
   border-radius: 2rem;
+  min-width: 7rem;
 }
 .container .section3 .forecast h4 {
   font-weight: 400;
@@ -132,5 +148,31 @@
   text-align: center;
 }
 .container .section3 .forecast .low {
+  font-size: 0.7rem;
+}
+.container .section3 .dailyForecast {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.container .section3 .dailyForecast > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tertiary);
+  padding: 1rem;
+  border-radius: 2rem;
+  min-width: 7rem;
+}
+.container .section3 .dailyForecast h4 {
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.container .section3 .dailyForecast .low {
   font-size: 0.7rem;
 }/*# sourceMappingURL=home.component.css.map */
