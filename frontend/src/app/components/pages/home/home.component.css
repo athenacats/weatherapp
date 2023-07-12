@@ -131,6 +131,7 @@
   align-items: center;
   justify-content: space-around;
   gap: 1rem;
+  padding-bottom: 0.5rem;
 }
 .container .section3 .forecast > * {
   display: flex;

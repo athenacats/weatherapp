@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   searchTerm = '';
   weatherData$!: Observable<any>;
   errorMessage!: string;
+  showDailyForecast = false;
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
@@ -42,6 +43,14 @@ export class HomeComponent implements OnInit {
   }
 
   hourlyForecast() {
+    this.showDailyForecast = true;
+  }
+
+  dailyForecast() {
+    this.showDailyForecast = false;
+  }
+
+  /*hourlyForecast() {
     const elements = document.getElementsByClassName('dailyForecast');
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i] as HTMLElement;
@@ -89,5 +98,5 @@ export class HomeComponent implements OnInit {
       element.style.fontSize = '1.2rem';
       element.style.fontWeight = '400';
     }
-  }
+  }*/
 }
