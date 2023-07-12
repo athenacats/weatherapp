@@ -21,15 +21,15 @@ export class HomeComponent implements OnInit {
         return throwError(() => new Error(error));
       })
     );
-    this.weatherData$.subscribe(
-      (weatherData) => {
-        console.log(weatherData); // Display the weather data in the browser console for now
-        console.log(weatherData.current.condition.text);
+    this.weatherData$.subscribe({
+      next: () => {
+        console.log(this.weatherData$), // Display the weather data in the browser console for now
+          console.log(this.weatherData$.current.condition.text);
       },
-      (error) => {
-        console.error(error); // Handle the error appropriately
-      }
-    );
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
@@ -40,14 +40,14 @@ export class HomeComponent implements OnInit {
         return throwError(() => new Error(error));
       })
     );
-    this.weatherData$.subscribe(
-      (weatherData) => {
-        console.log(weatherData); // Display the weather data in the browser console for now
-        console.log(weatherData.current.condition.text);
+    this.weatherData$.subscribe({
+      next: () => {
+        console.log(this.weatherData$), // Display the weather data in the browser console for now
+          console.log(this.weatherData$.current.condition.text);
       },
-      (error) => {
-        console.error(error); // Handle the error appropriately
-      }
-    );
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
 }
