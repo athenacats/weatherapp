@@ -1,7 +1,7 @@
 <div class="container" *ngIf="weatherData$ | async as weatherData">
   <div class="section1">
     <img src="{{ weatherData.current.condition.icon }}" />
-    <div>
+    <div class="astro">
       <div>
         <svg
           width="800px"
@@ -78,8 +78,8 @@
             stroke-linecap="round"
           />
         </svg>
+        <h4>Sunrise:</h4>
         <h4>
-          Sunrise:
           <strong>{{
             weatherData.forecast.forecastday[0].astro.sunrise
           }}</strong>
@@ -164,8 +164,8 @@
             stroke-linecap="round"
           />
         </svg>
+        <h4>Sunset:</h4>
         <h4>
-          Sunset:
           <strong>{{
             weatherData.forecast.forecastday[0].astro.sunset
           }}</strong>
@@ -192,10 +192,10 @@
             fill="#1C274C"
           />
         </svg>
+        <h4>Moonphase:</h4>
         <h4>
-          Moonphase:
           <strong>{{
-            weatherData.forecast.forecastday[0].astro.moonphase
+            weatherData.forecast.forecastday[0].astro.moon_phase
           }}</strong>
         </h4>
       </div>

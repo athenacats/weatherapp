@@ -13,6 +13,23 @@
     flex-direction: column;
     gap: 0.5rem;
     text-align: var(--text);
+    .astro {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        height: 1.5rem;
+        object-fit: contain;
+        width: 2.5rem;
+        justify-content: end;
+      }
+    }
     h1 {
       font-size: 2rem;
     }
