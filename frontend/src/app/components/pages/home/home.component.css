@@ -157,6 +157,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
+  padding-bottom: 0.5rem;
 }
 .container .section3 .dailyForecast > * {
   display: flex;
