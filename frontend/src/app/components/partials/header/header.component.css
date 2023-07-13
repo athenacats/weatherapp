@@ -11,9 +11,15 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  color: var(--text);
+  color: #ffd8f5;
 }
 .container .content h1:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=header.component.css.map */

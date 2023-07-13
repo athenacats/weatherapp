@@ -8,6 +8,7 @@
 
 html,
 body {
+  min-height: 100vh;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -25,7 +26,7 @@ $text: #00180f;
 
 body {
   font-family: $fonts;
-  background-color: #b385db;
+  background-color: #e19cae;
 }
 
 :root {

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  height: 100%;
   gap: 1rem;
 
   .top {
@@ -85,6 +85,7 @@
       h4 {
         font-size: 0.8rem;
         font-weight: 300;
+        text-align: end;
       }
       svg {
         height: 1.5rem;

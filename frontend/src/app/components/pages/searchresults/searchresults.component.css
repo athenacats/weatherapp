@@ -75,17 +75,17 @@
   border-radius: 2rem;
   gap: 1rem;
 }
-.container .section2 > * {
+.container .section2 > div {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.container .section2 > * h4 {
+.container .section2 > div h4 {
   font-size: 0.8rem;
   font-weight: 300;
   text-align: end;
 }
-.container .section2 > * svg {
+.container .section2 > div svg {
   height: 1.5rem;
   -o-object-fit: contain;
      object-fit: contain;
@@ -212,9 +212,9 @@
 }
 
 .daytimeImage {
+  background-color: #e19cae;
   background-image: url(./../../../../assets/2207_w026_n002_2162b_p1_2162.jpg);
   color: var(--text);
-  background-color: #e19cae;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -240,4 +240,4 @@
 }
 .daytimeImage .section3 .dailyForecast > * {
   background-color: #f8b2af;
-}/*# sourceMappingURL=home.component.css.map */
+}/*# sourceMappingURL=searchresults.component.css.map */

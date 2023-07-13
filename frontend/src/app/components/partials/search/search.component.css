@@ -3,6 +3,7 @@ div {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  position: relative;
 }
 div input {
   border: none;
@@ -15,7 +16,7 @@ div input {
   color: var(--text);
 }
 div button {
-  background-color: var(--accent1);
+  background-color: #ffd8f5;
   border: none;
   outline: none;
   border-radius: 2rem;
@@ -29,4 +30,42 @@ div button {
 div button:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+div ul {
+  position: absolute;
+  z-index: 1;
+  margin-top: 0.2rem;
+  background: #b385db;
+  top: 100%;
+  justify-self: start;
+  margin-left: 0;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  left: 0;
+  width: 65%;
+  list-style: none;
+}
+div ul li {
+  padding: 0.2rem 0.5rem 0 0.5rem;
+  cursor: pointer;
+  color: var(--text);
+}
+div ul li:hover {
+  opacity: 0.8;
+  color: var(--primary);
+}
+
+@media screen and (max-width: 500px) {
+  input {
+    height: 1.5rem;
+    width: 60%;
+    font-size: 0.8rem;
+  }
+  button {
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+  ul {
+    font-size: 0.7rem;
+  }
 }/*# sourceMappingURL=search.component.css.map */
