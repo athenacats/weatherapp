@@ -1,4 +1,8 @@
-<div class="container" *ngIf="searchWeatherData$ | async as searchWeatherData">
+<div
+  class="container"
+  [class]="backgroundImage"
+  *ngIf="searchWeatherData$ | async as searchWeatherData"
+>
   <div class="top">
     <div class="section1">
       <img src="{{ searchWeatherData.current.condition.icon }}" />

@@ -13,6 +13,8 @@ export class SearchresultsComponent {
   searchWeatherData$!: Observable<any>;
   errorMessage!: string;
   showDailyForecast = false;
+  isDaytime!: boolean;
+  backgroundImage!: string;
 
   constructor(
     private weatherService: WeatherService,
@@ -27,6 +29,7 @@ export class SearchresultsComponent {
           .getSearch(this.searchTerm)
           .pipe(
             tap((weatherData) => {
+              this.checkDaytime(weatherData.location.localtime);
               console.log(weatherData); // Display the weather data in the browser console for now
             }),
             catchError((error) => {
@@ -46,5 +49,12 @@ export class SearchresultsComponent {
 
   dailyForecast() {
     this.showDailyForecast = false;
+  }
+
+  checkDaytime(localtime: string) {
+    const currentHour = new Date(localtime).getHours();
+    console.log(currentHour);
+    this.isDaytime = currentHour >= 6 && currentHour < 18;
+    this.backgroundImage = this.isDaytime ? 'daytimeImage' : 'nighttimeImage';
   }
 }

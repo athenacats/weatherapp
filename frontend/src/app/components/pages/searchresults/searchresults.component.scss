@@ -5,10 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 1rem;
-  color: var(--text);
+
   .top {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -16,13 +18,14 @@
   }
   .section1 {
     padding: 1rem;
-    background-color: var(--secondary);
+
     border-radius: 2rem;
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     text-align: var(--text);
+    color: var(--text);
     .astro {
       display: flex;
       align-items: center;
@@ -42,6 +45,7 @@
     }
     h1 {
       font-size: 2rem;
+      color: var(--text);
     }
     h4 {
       font-size: 0.9rem;
@@ -70,9 +74,10 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--tertiary);
+
     border-radius: 2rem;
     gap: 1rem;
+    color: var(--text);
     > div {
       display: flex;
       align-items: center;
@@ -95,25 +100,28 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    color: var(--text);
     .buttons {
       display: flex;
       gap: 1rem;
+      align-items: flex-end;
     }
     .daily {
       outline: none;
       border: none;
       cursor: pointer;
-      border-bottom: 1px solid var(--tertiary);
+
       font-size: 1.5rem;
       font-weight: 500;
       font-family: var(--fonts);
-      background-color: var(--accents2);
+      height: 4rem;
       width: 10rem;
     }
     .hourly {
       outline: none;
       border: none;
       cursor: pointer;
+      height: 3rem;
       border-bottom: 1px solid var(--tertiary);
       font-size: 1.2rem;
       font-weight: 400;
@@ -177,6 +185,39 @@
       .low {
         font-size: 0.7rem;
       }
+    }
+  }
+}
+.nighttimeImage {
+  background-color: white;
+  background-image: url(./../../../../assets/159Z_2107.w026.n002.628B.p1.628.jpg);
+}
+.daytimeImage {
+  background-image: url(./../../../../assets/2207_w026_n002_2162b_p1_2162.jpg);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .section1 {
+    background-color: #b385db;
+  }
+  .section2 {
+    background-color: #e19cae;
+  }
+  .section3 {
+    .daily {
+      background-color: #f76e5b;
+      border-bottom: 1px solid #b385db;
+    }
+    .hourly {
+      background-color: #f76e5b;
+      border-bottom: 1px solid #b385db;
+    }
+    .forecast > * {
+      background-color: #f8b2af;
+    }
+    .dailyForecast > * {
+      background-color: #f8b2af;
     }
   }
 }
