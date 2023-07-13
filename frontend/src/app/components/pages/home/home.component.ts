@@ -19,34 +19,17 @@ export class HomeComponent {
     activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm']) {
-        this.searchWeatherData$ = this.weatherService
-          .getSearch(this.searchTerm)
-          .pipe(
-            tap((weatherData) => {
-              console.log(weatherData); // Display the weather data in the browser console for now
-            }),
-            catchError((error) => {
-              this.errorMessage =
-                'An error occurred while fetching weather data.';
-              console.error(error);
-              return throwError(() => new Error(error));
-            })
-          );
-      } else {
-        this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
-          tap((weatherData) => {
-            console.log(weatherData); // Display the weather data in the browser console for now
-            console.log(weatherData.current.condition.text);
-          }),
-          catchError((error) => {
-            this.errorMessage =
-              'An error occurred while fetching weather data.';
-            console.error(error);
-            return throwError(() => new Error(error));
-          })
-        );
-      }
+      this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
+        tap((weatherData) => {
+          console.log(weatherData); // Display the weather data in the browser console for now
+          console.log(weatherData.current.condition.text);
+        }),
+        catchError((error) => {
+          this.errorMessage = 'An error occurred while fetching weather data.';
+          console.error(error);
+          return throwError(() => new Error(error));
+        })
+      );
     });
   }
 

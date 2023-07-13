@@ -7,9 +7,10 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { SearchComponent } from './components/partials/search/search.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchresultsComponent } from './components/pages/searchresults/searchresults.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SearchComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, SearchComponent, HomeComponent, SearchresultsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
