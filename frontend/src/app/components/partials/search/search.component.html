@@ -1,5 +1,6 @@
 <div>
   <input
+    class="input"
     #s
     type="text"
     [(ngModel)]="searchTerm"
@@ -10,6 +11,11 @@
   />
   <button (click)="search(s.value)">Search</button>
   <ul>
-    <li *ngFor="let suggestion of suggestions">{{ suggestion.name }}</li>
+    <li
+      *ngFor="let suggestion of suggestions"
+      (click)="populate(suggestion.name)"
+    >
+      {{ suggestion.name }}
+    </li>
   </ul>
 </div>

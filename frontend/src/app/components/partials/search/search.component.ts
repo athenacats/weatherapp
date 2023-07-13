@@ -37,4 +37,8 @@ export class SearchComponent {
         this.suggestions = response;
       });
   }
+
+  populate(value: string) {
+    this.searchTerm = value;
+  }
 }
