@@ -14,6 +14,8 @@ export class HomeComponent {
   searchWeatherData$!: Observable<any>;
   errorMessage!: string;
   showDailyForecast = false;
+  isDaytime!: boolean;
+  backgroundImage!: string;
   constructor(
     private weatherService: WeatherService,
     activatedRoute: ActivatedRoute
@@ -21,7 +23,8 @@ export class HomeComponent {
     activatedRoute.params.subscribe((params) => {
       this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
         tap((weatherData) => {
-          console.log(weatherData); // Display the weather data in the browser console for now
+          this.checkDaytime(weatherData.location.localtime);
+          console.log(weatherData.location.localtime); // Display the weather data in the browser console for now
           console.log(weatherData.current.condition.text);
         }),
         catchError((error) => {
@@ -33,41 +36,19 @@ export class HomeComponent {
     });
   }
 
-  /* ngOnInit(): void {
-    this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
-      tap((weatherData) => {
-        console.log(weatherData); // Display the weather data in the browser console for now
-        console.log(weatherData.current.condition.text);
-      }),
-      catchError((error) => {
-        this.errorMessage = 'An error occurred while fetching weather data.';
-        console.error(error);
-        return throwError(() => new Error(error));
-      })
-    );
-  }
-  search(term: string): void {
-    this.searchTerm = term; // this line enables the search term be used in backend
-    this.searchWeatherData$ = this.weatherService
-      .getSearch(this.searchTerm)
-      .pipe(
-        tap((weatherData) => {
-          console.log(weatherData); // Display the weather data in the browser console for now
-        }),
-        catchError((error) => {
-          this.errorMessage = 'An error occurred while fetching weather data.';
-          console.error(error);
-          return throwError(() => new Error(error));
-        })
-      );
-  }*/
-
   hourlyForecast() {
     this.showDailyForecast = true;
   }
 
   dailyForecast() {
     this.showDailyForecast = false;
+  }
+
+  checkDaytime(localtime: string) {
+    const currentHour = new Date(localtime).getHours();
+    console.log(currentHour);
+    this.isDaytime = currentHour >= 6 && currentHour < 18;
+    this.backgroundImage = this.isDaytime ? 'daytimeImage' : 'nighttimeImage';
   }
 
   /*hourlyForecast() {

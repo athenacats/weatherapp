@@ -5,7 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--accent2);
   gap: 1rem;
+
   .top {
     display: flex;
     justify-content: center;
@@ -182,4 +184,16 @@
       }
     }
   }
+}
+.nighttimeImage {
+  background-color: white;
+  background-image: url(./../../../../assets/159Z_2107.w026.n002.628B.p1.628.jpg);
+}
+.daytimeImage {
+  background-image: url(./../../../../assets/2207_w026_n002_2162b_p1_2162.jpg);
+  background-color: wheat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
