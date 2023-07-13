@@ -31,11 +31,15 @@ export class SearchComponent {
   }
 
   getSuggestions() {
-    this.weatherService
-      .getSearchSuggestions(this.searchTerm)
-      .subscribe((response: any[]) => {
-        this.suggestions = response;
-      });
+    if (this.searchTerm) {
+      this.weatherService
+        .getSearchSuggestions(this.searchTerm)
+        .subscribe((response: any[]) => {
+          this.suggestions = response;
+        });
+    } else {
+      this.clearSuggestions(); //to ensure the api call isnt still sent to backend when i clear the search box
+    }
   }
 
   populate(value: string) {
