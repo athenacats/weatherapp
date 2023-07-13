@@ -35,10 +35,10 @@ router.get(
 );
 
 router.get(
-  "/search",
+  "/search/:city",
   asyncHandler(async (req, res) => {
     try {
-      const { city } = req.query;
+      const { city } = req.params;
 
       const API = process.env.API_KEY!;
       const apiUrl = `https://api.weatherapi.com/v1/search.json?key=${API}&q=${city}`;

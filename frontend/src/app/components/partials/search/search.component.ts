@@ -13,8 +13,13 @@ export class SearchComponent {
   searchTerm = '';
   searchWeatherData$!: Observable<any>;
   errorMessage!: string;
+  suggestions!: any[];
 
-  constructor(private router: Router, activatedRoute: ActivatedRoute) {
+  constructor(
+    private weatherService: WeatherService,
+    private router: Router,
+    activatedRoute: ActivatedRoute
+  ) {
     activatedRoute.params.subscribe((params) => {
       if (params['searchTerm']) this.searchTerm = params['searchTerm'];
     });
@@ -23,5 +28,13 @@ export class SearchComponent {
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
     if (term) this.router.navigateByUrl('/weather?city=' + term);
+  }
+
+  getSuggestions() {
+    this.weatherService
+      .getSearchSuggestions(this.searchTerm)
+      .subscribe((response: any[]) => {
+        this.suggestions = response;
+      });
   }
 }

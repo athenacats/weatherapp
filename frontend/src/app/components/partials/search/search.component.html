@@ -2,9 +2,14 @@
   <input
     #s
     type="text"
+    [(ngModel)]="searchTerm"
+    (keyup)="getSuggestions()"
     placeholder="Search Location"
     (keyup.enter)="search(s.value)"
     [value]="searchTerm"
   />
   <button (click)="search(s.value)">Search</button>
+  <ul>
+    <li *ngFor="let suggestion of suggestions">{{ suggestion.name }}</li>
+  </ul>
 </div>
