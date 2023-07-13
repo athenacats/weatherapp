@@ -3,7 +3,7 @@
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   gap: 1rem;
@@ -18,7 +18,8 @@
   }
   .section1 {
     padding: 1rem;
-
+    max-width: 30rem;
+    justify-self: flex-start;
     border-radius: 2rem;
     width: 50%;
     display: flex;
@@ -69,7 +70,8 @@
   }
   .section2 {
     padding: 1rem;
-
+    justify-self: flex-end;
+    max-width: 30rem;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -105,6 +107,7 @@
       display: flex;
       gap: 1rem;
       align-items: flex-end;
+      padding-left: 2rem;
     }
     .daily {
       outline: none;

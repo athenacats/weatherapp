@@ -3,7 +3,7 @@
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
@@ -17,6 +17,7 @@
 }
 .container .section1 {
   padding: 1rem;
+  max-width: 30rem;
   border-radius: 2rem;
   width: 50%;
   display: flex;
@@ -68,6 +69,7 @@
 }
 .container .section2 {
   padding: 1rem;
+  max-width: 30rem;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -100,6 +102,7 @@
 .container .section3 .buttons {
   display: flex;
   gap: 1rem;
+  padding-left: 2rem;
   align-items: flex-end;
 }
 .container .section3 .daily {
