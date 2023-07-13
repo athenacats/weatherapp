@@ -45,6 +45,12 @@ div {
     list-style: none;
     li {
       padding: 0.2rem 0.5rem 0 0.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+    li:hover {
+      opacity: 0.8;
+      color: var(--primary);
     }
   }
 }
