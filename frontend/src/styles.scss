@@ -41,15 +41,15 @@ body {
 ::-webkit-scrollbar {
   width: 0.4rem;
   height: 0.4rem;
-  border: 1px solid var(--primary);
+  border: 1px solid #5c1a2d;
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 0;
-  background: var(--accent1);
+  background: #00395f;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4rem;
-  background: var(--primary);
+  background: #5c1a2d;
 }

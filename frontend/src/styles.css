@@ -16,7 +16,6 @@ body {
 
 body {
   font-family: "Oswald", Arial, Verdana, Optima, sans-serif;
-  background-color: var(--accent2);
 }
 
 :root {
@@ -43,4 +42,4 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 4rem;
   background: var(--primary);
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
