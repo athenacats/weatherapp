@@ -35,6 +35,26 @@ router.get(
 );
 
 router.get(
+  "/search",
+  asyncHandler(async (req, res) => {
+    try {
+      const { city } = req.query;
+
+      const API = process.env.API_KEY!;
+      const apiUrl = `https://api.weatherapi.com/v1/search.json?key=${API}&q=${city}`;
+
+      const response = await axios.get(apiUrl);
+      const weatherData = response.data;
+
+      res.json(weatherData);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "An error has occured" });
+    }
+  })
+);
+
+router.get(
   "/forecast",
   asyncHandler(async (req, res) => {
     try {
