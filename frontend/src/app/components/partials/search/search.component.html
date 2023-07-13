@@ -13,7 +13,7 @@
   <ul>
     <li
       *ngFor="let suggestion of suggestions"
-      (click)="populate(suggestion.name)"
+      (click)="populate(suggestion.name); clearSuggestions()"
     >
       {{ suggestion.name }}
     </li>

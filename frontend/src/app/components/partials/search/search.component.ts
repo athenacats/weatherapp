@@ -41,4 +41,7 @@ export class SearchComponent {
   populate(value: string) {
     this.searchTerm = value;
   }
+  clearSuggestions() {
+    this.suggestions = [];
+  }
 }
