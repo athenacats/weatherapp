@@ -23,18 +23,12 @@
     "@angular/platform-browser-dynamic": "^16.1.4",
     "@angular/router": "^16.1.4",
     "@types/jasmine": "~4.3.5",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.0",
     "typescript": "5.1.6",
     "zone.js": "~0.13.1"
   },
   "devDependencies": {
-    "eslint-config-prettier": "8.8.0",
-    "eslint-config-standard-with-typescript": "36.0.0",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-n": "16.0.1",
-    "eslint-plugin-promise": "6.1.1",
     "jasmine-core": "~5.0.1",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
