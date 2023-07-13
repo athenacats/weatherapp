@@ -3,6 +3,7 @@ div {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  position: relative;
   input {
     border: none;
     border-radius: 2rem;
@@ -28,5 +29,22 @@ div {
   button:hover {
     cursor: pointer;
     opacity: 0.8;
+  }
+  ul {
+    position: absolute;
+    z-index: 1;
+    margin-top: 0.2rem;
+    background: var(--accent1);
+    top: 100%;
+    justify-self: start;
+    margin-left: 0;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    left: 0;
+    width: 65%;
+    list-style: none;
+    li {
+      padding: 0.2rem 0.5rem 0 0.5rem;
+    }
   }
 }
