@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
     this.searchWeatherData$ = this.weatherService
-      .getForecast(this.searchTerm)
+      .getSearch(this.searchTerm)
       .pipe(
         tap((weatherData) => {
           console.log(weatherData); // Display the weather data in the browser console for now

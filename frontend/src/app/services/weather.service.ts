@@ -8,11 +8,11 @@ import { FORECAST_RESULT, SEARCH_RESULT } from '../shared/constants/urls';
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  getWeather(searchTerm: string) {
-    return this.http.get<any>(SEARCH_RESULT + '?city=' + searchTerm);
-  }
-
   getForecast(searchTerm: string) {
     return this.http.get<any>(FORECAST_RESULT + '?city=' + searchTerm);
+  }
+
+  getSearch(searchTerm: string) {
+    return this.http.get<any>(SEARCH_RESULT + searchTerm);
   }
 }
