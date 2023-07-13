@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
@@ -14,12 +14,14 @@ export class SearchComponent {
   searchWeatherData$!: Observable<any>;
   errorMessage!: string;
 
-  constructor(private router: Router) {
-    console.log(this.searchTerm);
+  constructor(private router: Router, activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      if (params['searchTerm']) this.searchTerm = params['searchTerm'];
+    });
   }
 
   search(term: string): void {
     this.searchTerm = term; // this line enables the search term be used in backend
-    if (term) this.router.navigateByUrl('/weather/' + term);
+    if (term) this.router.navigateByUrl('/weather?city=' + term);
   }
 }

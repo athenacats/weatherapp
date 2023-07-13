@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
 
@@ -7,15 +8,49 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   searchTerm = '';
   weatherData$!: Observable<any>;
   searchWeatherData$!: Observable<any>;
   errorMessage!: string;
   showDailyForecast = false;
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private weatherService: WeatherService,
+    activatedRoute: ActivatedRoute
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.searchWeatherData$ = this.weatherService
+          .getSearch(this.searchTerm)
+          .pipe(
+            tap((weatherData) => {
+              console.log(weatherData); // Display the weather data in the browser console for now
+            }),
+            catchError((error) => {
+              this.errorMessage =
+                'An error occurred while fetching weather data.';
+              console.error(error);
+              return throwError(() => new Error(error));
+            })
+          );
+      } else {
+        this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
+          tap((weatherData) => {
+            console.log(weatherData); // Display the weather data in the browser console for now
+            console.log(weatherData.current.condition.text);
+          }),
+          catchError((error) => {
+            this.errorMessage =
+              'An error occurred while fetching weather data.';
+            console.error(error);
+            return throwError(() => new Error(error));
+          })
+        );
+      }
+    });
+  }
 
-  ngOnInit(): void {
+  /* ngOnInit(): void {
     this.weatherData$ = this.weatherService.getForecast('nairobi').pipe(
       tap((weatherData) => {
         console.log(weatherData); // Display the weather data in the browser console for now
@@ -42,7 +77,7 @@ export class HomeComponent implements OnInit {
           return throwError(() => new Error(error));
         })
       );
-  }
+  }*/
 
   hourlyForecast() {
     this.showDailyForecast = true;

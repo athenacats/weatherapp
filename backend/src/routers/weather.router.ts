@@ -14,13 +14,14 @@ router.use(function (req, res, next) {
 });
 
 router.get(
-  "/weather/:searchTerm",
+  "/weather",
   asyncHandler(async (req, res) => {
     try {
+      console.log(req.params.searchTerm);
       const { city } = req.query;
       console.log(city);
       const API = process.env.API_KEY!;
-      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${API}&q=${city}&days=7&aqi=no&alerts=no`;
+      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${API}&q=${city}&days=3&aqi=no&alerts=no`;
 
       const response = await axios.get(apiUrl);
       const weatherData = response.data;
