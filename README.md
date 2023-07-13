@@ -4,10 +4,9 @@
 [![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)]
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)]
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)]
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)]
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)]
 [![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)]
-[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)]
+
 
 [![Code Size](https://img.shields.io/github/languages/code-size/athenacats/weatherapp?color=9cf&style=for-the-badge)]
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/esther-lonyangapuo/)
@@ -26,7 +25,7 @@
 
 ## Introduction
 
-This is a [full stack Angular weather forecasting application ](https://weatherzone-4tow.onrender.com/)  [thefreakylink](https://thefreakylink.com/).
+This is a [full stack Angular weather forecasting application ](https://weatherzone-4tow.onrender.com/)  [weatherzone](https://weatherzone-4tow.onrender.com/). The project was meant to be done using simple javascript requests, but I decided to use angular so that I could keep learning about the framework.
 
 To see the website in action, [click here](https://weatherzone-4tow.onrender.com/).
 
@@ -65,10 +64,12 @@ The project was relatively simple to complete, with the only tough parts being h
 
 ## Acknowledgements
 
-A huge source of reference was FreeCOdeCamp and Code With Nassir on Youtube.
+I referred to various Angular documentation to get the project up and running. This project was done as an assignment from The Odin Project.
 
 ## Contact
 
 Reach me on
+
 [LinkedIn](https://www.linkedin.com/in/esther-lonyangapuo/)
+
 [Email](mailto:chenalonya@gmail.com)
