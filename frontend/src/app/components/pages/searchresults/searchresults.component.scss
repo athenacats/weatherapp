@@ -1,0 +1,181 @@
+.container {
+  padding: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .section1 {
+    padding: 1rem;
+    background-color: var(--secondary);
+    border-radius: 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: var(--text);
+    .astro {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        height: 1.5rem;
+        object-fit: contain;
+        width: 2.5rem;
+        justify-content: end;
+      }
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    .location {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    h2 {
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+    img {
+      height: 7rem;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .section2 {
+    padding: 1rem;
+    color: var(--text);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--tertiary);
+    border-radius: 2rem;
+    gap: 1rem;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      h4 {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+      svg {
+        height: 1.5rem;
+        object-fit: contain;
+        width: 2.5rem;
+        justify-content: end;
+      }
+    }
+  }
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    .daily {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 1px solid var(--tertiary);
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family: var(--fonts);
+      background-color: var(--accents2);
+      width: 10rem;
+    }
+    .hourly {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 1px solid var(--tertiary);
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: var(--fonts);
+      background-color: var(--accents2);
+      width: 10rem;
+    }
+    .forecast {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+      > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--tertiary);
+        padding: 1rem;
+        border-radius: 2rem;
+        min-width: 7rem;
+      }
+
+      h4 {
+        font-weight: 400;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .low {
+        font-size: 0.7rem;
+      }
+    }
+    .dailyForecast {
+      width: 100%;
+      display: none;
+      overflow-x: auto;
+      align-items: center;
+      justify-content: flex-start; // need this to ensure you can see first div
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+
+      > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--tertiary);
+        padding: 1rem;
+        border-radius: 2rem;
+        min-width: 7rem;
+      }
+
+      h4 {
+        font-weight: 400;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .low {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
