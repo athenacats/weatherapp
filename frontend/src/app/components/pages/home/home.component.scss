@@ -25,7 +25,7 @@
     flex-direction: column;
     gap: 0.5rem;
     text-align: var(--text);
-    color: var(--text);
+
     .astro {
       display: flex;
       align-items: center;
@@ -45,7 +45,6 @@
     }
     h1 {
       font-size: 2rem;
-      color: var(--text);
     }
     h4 {
       font-size: 0.9rem;
@@ -70,14 +69,14 @@
   }
   .section2 {
     padding: 1rem;
-    color: var(--text);
+
     width: 50%;
     display: flex;
     flex-direction: column;
 
     border-radius: 2rem;
     gap: 1rem;
-    color: var(--text);
+
     > div {
       display: flex;
       align-items: center;
@@ -100,7 +99,7 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    color: var(--text);
+
     .buttons {
       display: flex;
       gap: 1rem;
@@ -189,12 +188,39 @@
   }
 }
 .nighttimeImage {
-  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-image: url(./../../../../assets/159Z_2107.w026.n002.628B.p1.628.jpg);
+  color: var(--accent1);
+  .section1 {
+    background-color: #000e28;
+  }
+  .section2 {
+    background-color: #271b88;
+  }
+  .section3 {
+    .daily {
+      background-color: #00395f;
+      border-bottom: 1px solid #000e28;
+      color: var(--accent1);
+    }
+    .hourly {
+      background-color: #00395f;
+      border-bottom: 1px solid #000e28;
+      color: var(--accent1);
+    }
+    .forecast > * {
+      background-color: #0a0019;
+    }
+    .dailyForecast > * {
+      background-color: #0a0019;
+    }
+  }
 }
 .daytimeImage {
   background-image: url(./../../../../assets/2207_w026_n002_2162b_p1_2162.jpg);
-
+  color: var(--text);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,10 +234,12 @@
     .daily {
       background-color: #f76e5b;
       border-bottom: 1px solid #b385db;
+      color: var(--text);
     }
     .hourly {
       background-color: #f76e5b;
       border-bottom: 1px solid #b385db;
+      color: var(--text);
     }
     .forecast > * {
       background-color: #f8b2af;
