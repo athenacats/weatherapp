@@ -27,7 +27,7 @@
 
 This is a [full stack Angular weather forecasting application ](https://weatherzone-4tow.onrender.com/)  [weatherzone](https://weatherzone-4tow.onrender.com/). The project was meant to be done using simple javascript requests, but I decided to use angular so that I could keep learning about the framework.
 
-To see the website in action, [click here](https://weatherzone-4tow.onrender.com/).
+To see the website in action, [click here](https://weatherzone-4tow.onrender.com/). Please note it takes the website some time to load up as it is hosted on the free plan.
 
 ## Technologies
 
